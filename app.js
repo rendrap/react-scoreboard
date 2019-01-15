@@ -1,8 +1,8 @@
-const Header = () => {
+const Header = (props) => {
   return (
     <header>
-      <h1>Scoreboard</h1>
-      <span className='stats'>Players: 2</span>
+      <h1>{ props.title }</h1>
+      <span className='stats'>Players: { props.totalPlayers }</span>
     </header>
   );
 };
@@ -19,17 +19,6 @@ const Player = () => {
   );
 };
 
-const App = () => {
-  return (
-    <div className='scoreboard'>
-      <Header />
-
-      {/* Player list */}
-      <Player />
-
-    </div>
-  );
-};
 
 const Counter = () => {
   return (
@@ -37,6 +26,18 @@ const Counter = () => {
       <button className='counter-action decrement'> - </button>
       <span className='counter-score'>35</span>
       <button className='counter-action increment'> + </button>
+    </div>
+  );
+};
+
+const App = () => {
+  return (
+    <div className='scoreboard'>
+      <Header title="Scoreboard" totalPlayers={1} />
+
+      {/* Player list */}
+      <Player />
+
     </div>
   );
 };
