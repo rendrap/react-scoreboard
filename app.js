@@ -14,16 +14,34 @@ const Player = () => {
         Rendra
       </span>
 
-      <div className='counter'>
-        <button className='counter-action decrement'> - </button>
-        <span className='counter-score'>35</span>
-        <button className='counter-action increment'> + </button>
-      </div>
+      <Counter />
+    </div>
+  );
+};
+
+const App = () => {
+  return (
+    <div className='scoreboard'>
+      <Header />
+
+      {/* Player list */}
+      <Player />
+
+    </div>
+  );
+};
+
+const Counter = () => {
+  return (
+    <div className='counter'>
+      <button className='counter-action decrement'> - </button>
+      <span className='counter-score'>35</span>
+      <button className='counter-action increment'> + </button>
     </div>
   );
 };
 
 ReactDOM.render(
-  <Player />,
+  <App />,
   document.getElementById('root')
 );
