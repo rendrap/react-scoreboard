@@ -1,7 +1,3 @@
-const players = [
-
-];
-
 const Header = (props) => {
   return (
     <header>
@@ -56,15 +52,31 @@ class Counter extends React.Component {
 class App extends React.Component {
   state = {
     players: [
+    {
+    name: 'Rendra',
+    id: 1
+  },
+  {
+    name: 'Treasure',
+    id: 2
+  },
+  {
+    name: 'Ashley',
+    id: 3
+  },
+  {
+    name: 'James',
+    id: 4
+  }
     ]
   }
   render() {
     return (
       <div className='scoreboard'>
-        <Header title='Scoreboard' totalPlayers={props.initialPlayers.length} />
+        <Header title='Scoreboard' totalPlayers={this.state.players.length} />
 
         {/* Player list */}
-        {props.initialPlayers.map(player =>
+        {this.state.players.map(player =>
           (<Player
             name={player.name}
             key={player.id.toString()}
@@ -77,6 +89,6 @@ class App extends React.Component {
 };
 
 ReactDOM.render(
-  <App initialPlayers={players} />,
+  <App />,
   document.getElementById('root')
 );
