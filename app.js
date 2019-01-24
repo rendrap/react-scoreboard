@@ -1,11 +1,3 @@
-const Header = (props) => {
-  return (
-    <header>
-      <h1>{ props.title }</h1>
-      <span className='stats'>Players: { props.totalPlayers }</span>
-    </header>
-  );
-};
 
 const Player = (props) => {
   return (
@@ -54,19 +46,19 @@ class App extends React.Component {
   state = {
     players: [
     {
-    name: 'Rendra',
+    name: 'Bambang',
     id: 1
   },
   {
-    name: 'Treasure',
+    name: 'Tina',
     id: 2
   },
   {
-    name: 'Ashley',
+    name: 'Ruby',
     id: 3
   },
   {
-    name: 'James',
+    name: 'Eko',
     id: 4
   }
     ]
